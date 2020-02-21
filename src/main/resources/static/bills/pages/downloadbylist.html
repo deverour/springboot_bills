@@ -2,48 +2,137 @@
 <html lang="en">
 <head>
     <title>自定义下载</title>
+
 </head>
+
 <body>
-<body>
-<form action="/bills/findbychecklist" method="post"> 
+<form action="/order/export" method="post"> 
     <table border="1" width="800" height="1">
-        <tr><td><label> <input type="checkbox" name="checkbox"value="07-fentanbianhao" checked="checked">分摊编号</label> </td><td><label> <input type="checkbox" name="checkbox"value="37-fuweihoudushu">复位后读数</label> </td><td><label> <input type="checkbox" name="checkbox"value="09-fentanquerenzhuangtai">分摊确认状态</label> </td><td><label> <input type="checkbox" name="checkbox"value="62-chaifendaofentanfangshijine">拆分到分摊方式金额</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="02-shi" checked="checked" >市</label> </td><td><label> <input type="checkbox" name="checkbox"value="01-sheng">省</label> </td><td><label> <input type="checkbox" name="checkbox"value="63-fentanbili">分摊比例(%)</label> </td><td><label> <input type="checkbox" name="checkbox"value="38-zengjiandianliang">增减电量(线损或其他)</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="13-fukuanwanchengshijian"  checked="checked">付款完成时间</label> </td><td><label> <input type="checkbox" name="checkbox"value="39-beilv">电表倍率</label> </td><td><label> <input type="checkbox" name="checkbox"value="64-chaifendaokehujine">拆分到客户金额</label> </td><td><label> <input type="checkbox" name="checkbox"value="69-kaipiaoleix">开票类型</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="25-dianbiaobianma" checked="checked" >电表编码</label> </td><td><label> <input type="checkbox" name="checkbox"value="03-quyu">区域</label> </td><td><label> <input type="checkbox" name="checkbox"value="65-jiesuanmoshi">结算模式</label> </td><td><label> <input type="checkbox" name="checkbox"value="22-tuisongkehuzhuangtai">推送客户状态</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="27-dianbiaoleixing" checked="checked" >电表类型</label> </td><td><label> <input type="checkbox" name="checkbox"value="41-pingjundanjia">平均单价</label> </td><td><label> <input type="checkbox" name="checkbox"value="66-chaifendaojiesuanmoshijine">拆分到结算模式金额</label> </td><td><label> <input type="checkbox" name="checkbox"value="23-tuisongshijian">推送时间</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="28-zhanzhibianma" checked="checked" >站址编码</label> </td><td><label> <input type="checkbox" name="checkbox"value="42-yongdianjine">用电金额</label> </td><td><label> <input type="checkbox" name="checkbox"value="70-shuifujinzi">税负因子</label> </td><td><label> <input type="checkbox" name="checkbox"value="43-qitajianmian">其他应付或减免金额</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="30-shiqi" checked="checked" >购电起始日期</label> </td><td><label> <input type="checkbox" name="checkbox"value="17-chexiaoren">撤销人</label> </td><td><label> <input type="checkbox" name="checkbox"value="71-fentanjineshui">分摊金额(税负)</label> </td><td><label> <input type="checkbox" name="checkbox"value="10-shfoucunzaiqueren">同一用电明细是否存在 (不)确认</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="31-zhongqi" checked="checked" >购电截止日期</label> </td><td><label> <input type="checkbox" name="checkbox"value="61-fentanfangshi">分摊方式</label> </td><td><label> <input type="checkbox" name="checkbox"value="14-shenqingren">申请人</label> </td><td><label> <input type="checkbox" name="checkbox"value="36-fuweiqiandushu">复位前读数</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="33-qidu" checked="checked" >购电起始读数</label> </td><td><label> <input type="checkbox" name="checkbox"value="45-yongdiantianshu">本次用电天数</label> </td><td><label> <input type="checkbox" name="checkbox"value="18-tuisongcaiwuzhuangtai">分摊推送财务状态</label> </td><td><label> <input type="checkbox" name="checkbox"value="04-zhifudanhao">支付单号</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="34-zhidu" checked="checked" >购电截止读数</label> </td><td><label> <input type="checkbox" name="checkbox"value="46-rijundianliang">本次日均用电量</label> </td><td><label> <input type="checkbox" name="checkbox"value="56-fentanzhanzhi">分摊站址</label> </td><td><label> <input type="checkbox" name="checkbox"value="05-yongdianID">用电明细ID</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="40-dianliang" checked="checked" >用电量</label> </td><td><label> <input type="checkbox" name="checkbox"value="47-biaoganrijundianliang">标杆日均用电量</label> </td><td><label> <input type="checkbox" name="checkbox"value="19-tuisongcaiwuriqi">分摊推送财务日期</label> </td><td><label> <input type="checkbox" name="checkbox"value="08-fentanzhuangtai" checked="checked">分摊状态 </label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="44-zhifujine" checked="checked" >支付总金额</label> </td><td><label> <input type="checkbox" name="checkbox"value="48-pianlidianliang">偏离电量</label> </td><td><label> <input type="checkbox" name="checkbox"value="26-shifouyezhubaogan" >是否业主包干</label> </td><td><label> <input type="checkbox" name="checkbox"value="55-jiaofeibuhanshuijine">缴费不含税金额</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="59-kehu" checked="checked" >客户</label> </td><td><label> <input type="checkbox" name="checkbox"value="49-pianlifudu">偏离幅度(%)</label> </td><td><label> <input type="checkbox" name="checkbox"value="67-weicha">尾差</label> </td><td><label> <input type="checkbox" name="checkbox"value="20-chexiaotuisongcaiwuzhuangtai">分摊撤销推送财务状态</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="68-fentanjinebuhanshui" checked="checked" >分摊金额(不含税)</label> </td><td><label> <input type="checkbox" name="checkbox"value="50-shifouyichang">是否异常</label> </td><td><label> <input type="checkbox" name="checkbox"value="32-chaobiaoriqi">购电抄表日期</label> </td><td><label> <input type="checkbox" name="checkbox"value="57-zhanzhichaifenbili">站址拆分比例(%)</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="72-fentanjine">分摊金额(含税)</label> </td><td><label> <input type="checkbox" name="checkbox"value="51-yichangshuoming">异常说明</label> </td><td><label> <input type="checkbox" name="checkbox"value="29-zhanzhimingc">站址名称</label> </td><td><label> <input type="checkbox" name="checkbox"value="58-chaifendaozhanjine">拆分到站金额</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="15-fentanwanchengshijian">分摊完成时间</label> </td><td><label> <input type="checkbox" name="checkbox"value="52-jiaofeipiaoju">缴费票据类型</label> </td><td><label> <input type="checkbox" name="checkbox"value="11-dabiaozhuangtai">打标状态</label> </td><td><label> <input type="checkbox" name="checkbox"value="12-shifoucunzaidabiao">同一用电明细是否存在已打标</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="16-chexiaoshijian">撤销时间</label> </td><td><label> <input type="checkbox" name="checkbox"value="53-jiaofeihanshuijine">缴费含税金额</label> </td><td><label> <input type="checkbox" name="checkbox"value="06-hexiaoID">核销明细ID</label> </td><td><label> <input type="checkbox" name="checkbox"value="60-kuahangyebianma">跨行业业务编码</label> </td></tr>
-        <tr><td><label> <input type="checkbox" name="checkbox"value="24-gongdianyonghuhao">供电用户号</label> </td><td><label> <input type="checkbox" name="checkbox"value="54-jiaofeishuie">缴费税额</label> </td><td><label> <input type="checkbox" name="checkbox"value="35-shifoufuwei">是否复位</label> </td><td><label> <input type="checkbox" name="checkbox"value="21-chexiaotuisongcaiwuriqi">分摊撤销推送财务日期</label> </td></tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="07-fentanbianhao" checked="checked">分摊编号</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="37-fuweihoudushu">复位后读数</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="09-fentanquerenzhuangtai">分摊确认状态</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="62-chaifendaofentanfangshijine">拆分到分摊方式金额</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="02-shi" checked="checked">市</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="01-sheng">省</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="63-fentanbili">分摊比例(%)</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="38-zengjiandianliang">增减电量(线损或其他)</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="13-fukuanwanchengshijian" checked="checked">付款完成时间</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="39-beilv">电表倍率</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="64-chaifendaokehujine">拆分到客户金额</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="69-kaipiaoleix">开票类型</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="25-dianbiaobianma" checked="checked">电表编码</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="03-quyu">区域</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="27-dianbiaoleixing" >电表类型</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="22-tuisongkehuzhuangtai">推送客户状态</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="65-jiesuanmoshi">结算模式</label> </td>
 
-
-
+            <td><label> <input type="checkbox" name="checkbox" value="41-pingjundanjia">平均单价</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="66-chaifendaojiesuanmoshijine">拆分到结算模式金额</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="23-tuisongshijian">推送时间</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="28-zhanzhibianma" checked="checked">站址编码</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="42-yongdianjine">用电金额</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="70-shuifujinzi">税负因子</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="43-qitajianmian">其他应付或减免金额</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="30-shiqi" checked="checked">购电起始日期</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="17-chexiaoren">撤销人</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="71-fentanjineshui">分摊金额(税负)</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="10-shfoucunzaiqueren">同一用电明细是否存在 (不)确认</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="31-zhongqi" checked="checked">购电截止日期</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="61-fentanfangshi">分摊方式</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="14-shenqingren">申请人</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="36-fuweiqiandushu">复位前读数</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="33-qidu" checked="checked">购电起始读数</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="45-yongdiantianshu">本次用电天数</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="18-tuisongcaiwuzhuangtai">分摊推送财务状态</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="04-zhifudanhao">支付单号</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="34-zhidu" checked="checked">购电截止读数</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="46-rijundianliang">本次日均用电量</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="56-fentanzhanzhi">分摊站址</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="05-yongdianID">用电明细ID</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="40-dianliang" checked="checked">用电量</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="47-biaoganrijundianliang">标杆日均用电量</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="19-tuisongcaiwuriqi">分摊推送财务日期</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="08-fentanzhuangtai" checked="checked">分摊状态 </label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="44-zhifujine" checked="checked">支付总金额</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="48-pianlidianliang">偏离电量</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="26-shifouyezhubaogan">是否业主包干</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="55-jiaofeibuhanshuijine">缴费不含税金额</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="59-kehu" checked="checked">客户</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="49-pianlifudu">偏离幅度(%)</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="67-weicha">尾差</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="20-chexiaotuisongcaiwuzhuangtai">分摊撤销推送财务状态</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="68-fentanjinebuhanshui" checked="checked">分摊金额(不含税)</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="50-shifouyichang">是否异常</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="32-chaobiaoriqi">购电抄表日期</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="57-zhanzhichaifenbili">站址拆分比例(%)</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="72-fentanjine">分摊金额(含税)</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="51-yichangshuoming">异常说明</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="29-zhanzhimingc">站址名称</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="58-chaifendaozhanjine">拆分到站金额</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="15-fentanwanchengshijian">分摊完成时间</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="52-jiaofeipiaoju">缴费票据类型</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="11-dabiaozhuangtai">打标状态</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="12-shifoucunzaidabiao">同一用电明细是否存在已打标</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="16-chexiaoshijian">撤销时间</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="53-jiaofeihanshuijine">缴费含税金额</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="06-hexiaoID">核销明细ID</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="60-kuahangyebianma">跨行业业务编码</label> </td>
+        </tr>
+        <tr>
+            <td><label> <input type="checkbox" name="checkbox" value="24-gongdianyonghuhao">供电用户号</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="54-jiaofeishuie">缴费税额</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="35-shifoufuwei">是否复位</label> </td>
+            <td><label> <input type="checkbox" name="checkbox" value="21-chexiaotuisongcaiwuriqi">分摊撤销推送财务日期</label> </td>
+        </tr>
 
     </table>
-    <br/>
+    <br />
     付款完成时间_起：
-    <select name="startyear">
+    <select id="paystartyear" name="paystartyear">
         <option value="2014">2014</option>
         <option value="2015">2015</option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
-        <option value="2018"  selected>2018</option>
+        <option value="2018">2018</option>
         <option value="2019">2019</option>
-        <option value="2020">2020</option>
+        <option value="2020" selected>2020</option>
     </select>
     年
-    <select name="startmonth">
-        <option value="01">01</option>
+    <select id="paystartmonth" name="paystartmonth">
+        <option value="01" selected>01</option>
         <option value="02">02</option>
         <option value="03">03</option>
         <option value="04">04</option>
@@ -51,26 +140,26 @@
         <option value="06">06</option>
         <option value="07">07</option>
         <option value="08">08</option>
-        <option value="09" selected>09</option>
+        <option value="09">09</option>
         <option value="10">10</option>
         <option value="11">11</option>
         <option value="12">12</option>
     </select>
     月
-    <br/>
+    <br />
 
     付款完成时间_止：
-    <select name="endyear">
+    <select id="payendyear" name="payendyear">
         <option value="2014">2014</option>
         <option value="2015">2015</option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
-        <option value="2018" >2018</option>
-        <option value="2019" >2019</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
         <option value="2020" selected>2020</option>
     </select>
     年
-    <select name="endmonth">
+    <select id="payendmonth" name="payendmonth">
         <option value="01">01</option>
         <option value="02">02</option>
         <option value="03">03</option>
@@ -86,16 +175,171 @@
     </select>
     月
 
+    <br />
+    ————————————————
+    <br />
+    分摊完成时间_起：
+    <select id="fentanstartyear" name="fentanstartyear">
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020" selected>2020</option>
+    </select>
+    年
+    <select id="fentanstartmonth" name="fentanstartmonth">
+        <option value="01" selected>01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    月
+    <br />
 
-    <br/>
-    <input type="submit"   value="下载">
+    分摊完成时间_止：
+    <select id="fentanendyear" name="fentanendyear">
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020" selected>2020</option>
+    </select>
+    年
+    <select id="fentanendmonth" name="fentanendmonth">
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12" selected>12</option>
+    </select>
+    月
+
+    <br />
+    ————————————————
+    <br />
+    分公司：
+    <select id="fengongsi" name="fengongsi">
+        <option value="all" selected> </option>
+        <option value="奉节">奉节</option>
+        <option value="涪陵">涪陵</option>
+        <option value="合川">合川</option>
+        <option value="两江">两江</option>
+        <option value="南岸">南岸</option>
+        <option value="黔江">黔江</option>
+        <option value="万州">万州</option>
+        <option value="永川">永川</option>
+        <option value="渝中">渝中</option>
+    </select>
+    &nbsp&nbsp&nbsp
+    客户：
+    <select id="kehu" name="kehu">
+        <option value="all" selected> </option>
+        <option value="联通">联通</option>
+        <option value="移动">移动</option>
+        <option value="电信">电信</option>
+        <option value="其他">其他</option>
+        <option value="拓展用户">拓展用户</option>
+    </select>
+    &nbsp&nbsp&nbsp
+    结算模式：
+    <select id="jiesuanmoshi" name="jiesuanmoshi">
+        <option value="all" selected> </option>
+        <option value="转售">转售</option>
+        <option value="包干">包干</option>
+        <option value="代垫">代垫</option>
+        <option value="传导">传导</option>
+    </select>
+
+
+    <br />
+    <br />
+    <input type="submit" value="下载" >
 
 </form>
 
-<br/>
-<br/>
+<br />
+<br />
 <a href="../list.html">返回菜单列表</a>
  
+<script src="js/jquery-2.2.3.min.js"></script>
+<script>
+    function load() {
+        var titles = new Array();
+        var checkbox = $("input[name='checkbox']:checked");
+        checkbox.each(function() {
+            titles.push($(this).val()); //向数组中添加元素
+        });
+        console.log(titles.length);
 
+        var paystartyear = $("#paystartyear").val();
+        var paystartmonth = $("#paystartmonth").val();
+        var payendyear = $("#payendyear").val();
+        var payendmonth = $("#payendmonth").val();
+        var fentanstartyear = $("#fentanstartyear").val();
+        var fentanstartmonth = $("#fentanstartmonth").val();
+        var fentanendyear = $("#fentanendyear").val();
+        var fentanendmonth = $("#fentanendmonth").val();
+        var fengongsi = $("#fengongsi").val();
+        var kehu = $("#kehu").val();
+        var jiesuanmoshi = $("#jiesuanmoshi").val();
+
+
+        data = {
+            "titles": titles,
+            "paystartyear": paystartyear,
+            "paystartmonth": paystartmonth,
+            "payendyear": payendyear,
+            "payendmonth": payendmonth,
+            "fentanstartyear": fentanstartyear,
+            "fentanstartmonth": fentanstartmonth,
+            "fentanendyear": fentanendyear,
+            "fentanendmonth": fentanendmonth,
+            "fengongsi": fengongsi,
+            "kehu": kehu,
+            "jiesuanmoshi": jiesuanmoshi,
+        }
+        url = "/order/export";
+        download(url, data);
+
+
+
+    }
+
+    function download(url, data) {
+        if (url && data) {
+
+            var form = $('<form></form>');
+            form.attr('action', url);
+            form.attr('method', 'post');
+            //alert(url);
+            for (var item in data) {
+                var input = $('<input type="text" />');
+                input.attr('name', item);
+                input.attr('value', data[item]);
+                form.append(input);
+            }
+            form.appendTo('body').submit().remove();
+        };
+    }
+</script>
 </body>
 </html>

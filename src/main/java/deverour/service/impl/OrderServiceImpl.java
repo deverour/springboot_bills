@@ -2,6 +2,7 @@ package deverour.service.impl;
 
 
 import deverour.domain.Order;
+import deverour.domain.RequestData;
 import deverour.mapper.OrderMapper;
 import deverour.poi.ExcelRead;
 import deverour.poi.ExcelWrite;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,7 +35,7 @@ public class OrderServiceImpl  implements OrderService {
         return is;
     }
 
-    public InputStream findByList(String[] checklist,String timeList) throws Exception {
+   /* public InputStream findByList(String[] checklist,String timeList) throws Exception {
 
         HashMap<String,String> checkmap = new HashMap<String,String>();
         ArrayList<String>checkindexlist =new ArrayList<String>();
@@ -64,6 +66,50 @@ public class OrderServiceImpl  implements OrderService {
         List<Order> list = orderMapper.findByList(order);
         InputStream is= ExcelWrite.WriteByList(list,checknamelist);
         return is;
+    }*/
+
+    @Override
+    public InputStream findByConditions(RequestData requestData) throws Exception {
+        String[] checklist = requestData.getTitles();
+        String payStartTime = requestData.getPaystartyear()+"-"+requestData.getPaystartmonth();
+        String payEndTime = requestData.getPayendyear()+"-"+requestData.getPayendmonth();
+        String fentanStartTime = requestData.getFentanstartyear()+"-"+requestData.getFentanstartmonth();
+        String fentanEndTime = requestData.getFentanendyear()+"-"+requestData.getFentanendmonth();
+        String payTimeList = Utils.getTimeList(payStartTime,payEndTime);
+        String fentanTimeList = Utils.getTimeList(fentanStartTime,fentanEndTime);
+
+        Order order = new Order();
+        order.setKehu(requestData.getKehu());
+        order.setPaytimes(payTimeList);
+        order.setFentantimes(fentanTimeList);
+        order.setShi(requestData.getFengongsi());
+        order.setJiesuanmoshi(requestData.getJiesuanmoshi());
+
+        HashMap<String,String> titlemap = new HashMap<String,String>();
+        ArrayList<String> titlendexlist =new ArrayList<String>();
+        ArrayList<String> titlenamelist =new ArrayList<String>();
+
+        for (String str:checklist){
+            String[] sp=str.split("-");
+            titlemap.put(sp[0],sp[1]);
+            titlendexlist.add(sp[0]);
+            //System.out.println(str);
+        }
+        Collections.sort(titlendexlist);
+        for (String ss:titlendexlist){
+            System.out.println("****"+ss);
+        }
+        for(int index=0;index<titlendexlist.size();index++){
+            titlenamelist.add(titlemap.get(titlendexlist.get(index)));
+            //System.out.println(checkmap.get(checkindexlist.get(checkindex)));
+
+        }
+        order.setNames(titlenamelist);
+        List<Order> list = orderMapper.findByConditions(order);
+        InputStream is= ExcelWrite.WriteByList(list,titlenamelist);
+        return is;
+
+
     }
 
     public void saveOrder(String filepath) throws Exception {
@@ -133,6 +179,8 @@ public class OrderServiceImpl  implements OrderService {
         System.out.println("更新数据："+index);
 
     }
+
+
 
 
 }

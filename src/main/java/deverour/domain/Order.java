@@ -81,8 +81,10 @@ public class Order {
     private String shuifujinzi;
     private String fentanjineshui;
     private String fentanjine;
-    private  ArrayList<String> names;
-    private  String times;
+
+    private ArrayList<String> names;
+    private String paytimes;
+    private String fentantimes;
     public static ArrayList<String> getNamelist() {
         ArrayList<String> namelist = new ArrayList<String>() ;
         namelist.add("省");
@@ -833,12 +835,20 @@ public class Order {
         this.names = names;
     }
 
-    public String getTimes() {
-        return times;
+    public String getPaytimes() {
+        return paytimes;
     }
 
-    public void setTimes(String times) {
-        this.times = times;
+    public void setPaytimes(String paytimes) {
+        this.paytimes = paytimes;
+    }
+
+    public String getFentantimes() {
+        return fentantimes;
+    }
+
+    public void setFentantimes(String fentantimes) {
+        this.fentantimes = fentantimes;
     }
 
     @Override
